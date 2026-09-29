@@ -140,30 +140,30 @@ code --install-extension *.vsix`}
           6. Setting the Groq API Key
         </h2>
         <p className="text-sm text-gray-300">
-          Knight Rider communicates with Groq for accelerated model inference. First, retrieve a valid key (prefixed with <code>gsk_...</code>) from the{" "}
+          Knight Rider communicates with Groq for accelerated model inference. First, retrieve your free API key from{" "}
           <a
             href="https://console.groq.com/keys"
             target="_blank"
             rel="noreferrer"
-            className="text-cyan-400 underline"
+            className="text-cyan-400 underline font-medium"
           >
-            Groq Cloud Console
-          </a>
-          . Then set it using one of the following methods:
+            groq.com
+          </a>{" "}
+          (Groq Console). Then follow these steps to configure it:
         </p>
 
-        {/* Method 1: Command Palette */}
-        <div className="border border-slate-800 bg-slate-900/60 p-5 rounded-xl space-y-3">
-          <h3 className="text-base font-semibold text-slate-100 flex items-center gap-2">
-            <span className="text-cyan-400 font-mono text-xs px-2 py-0.5 rounded bg-cyan-950/60 border border-cyan-500/30">
-              METHOD 1
+        {/* Highlighted Step-by-Step Prompt */}
+        <div className="border border-cyan-500/30 bg-slate-900/80 p-5 rounded-xl space-y-3">
+          <h3 className="text-base font-semibold text-white flex items-center gap-2">
+            <span className="text-cyan-400 font-mono text-xs px-2 py-0.5 rounded bg-cyan-950 border border-cyan-500/40">
+              QUICK SETUP
             </span>
-            Command Palette Prompt
+            Add API Key via Command Palette
           </h3>
 
-          <ol className="text-sm text-gray-300 space-y-2.5 list-decimal list-inside">
+          <ol className="text-sm text-gray-200 space-y-2.5 list-decimal list-inside">
             <li>
-              <strong>Open the Command Palette:</strong> Press{" "}
+              Go to the Command Palette using{" "}
               <kbd className="px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-cyan-400 font-mono text-xs">
                 Ctrl + Shift + P
               </kbd>{" "}
@@ -174,27 +174,23 @@ code --install-extension *.vsix`}
               on macOS).
             </li>
             <li>
-              <strong>What to Type:</strong> Type the following into the prompt:
+              Type:
               <pre className="bg-slate-950 p-2.5 rounded border border-cyan-500/20 text-cyan-300 text-xs mt-1.5 overflow-x-auto">
-                <code>Night Rider: Set Groq API Key</code>
+                <code>night rider:set groq api key</code>
               </pre>
               <span className="text-xs text-gray-400 block mt-1">
-                If that specific title does not autocomplete, type{" "}
-                <code className="text-cyan-300">Night Rider: Set API Key</code> (or simply{" "}
-                <code className="text-cyan-300">Night Rider</code> to inspect all registered commands).
+                (or simply type <code className="text-cyan-300">Night Rider: Set API Key</code> if autocompleting).
               </span>
             </li>
             <li>
-              <strong>Enter and Save the Key:</strong> Select the command from the list and hit{" "}
-              <kbd className="px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-gray-200 font-mono text-xs">
-                Enter
-              </kbd>
-              . An input modal will appear at the top-center of VS Code. Paste your token (starts with{" "}
-              <code className="text-cyan-300">gsk_...</code>) and press{" "}
+              Press <kbd className="px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-gray-200 font-mono text-xs">Enter</kbd> to open the input modal at the top center of your screen.
+            </li>
+            <li>
+              Paste the free API key you got from <strong>groq.com</strong> (starts with <code className="text-cyan-300">gsk_...</code>) and press{" "}
               <kbd className="px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-gray-200 font-mono text-xs">
                 Enter
               </kbd>{" "}
-              to save.
+              to save it.
             </li>
           </ol>
         </div>
@@ -203,36 +199,20 @@ code --install-extension *.vsix`}
         <div className="border border-slate-800 bg-slate-900/60 p-5 rounded-xl space-y-3">
           <h3 className="text-base font-semibold text-slate-100 flex items-center gap-2">
             <span className="text-purple-400 font-mono text-xs px-2 py-0.5 rounded bg-purple-950/60 border border-purple-500/30">
-              METHOD 2
+              ALTERNATIVE
             </span>
             Direct UI Input (Sidebar Panel)
           </h3>
 
           <ul className="text-sm text-gray-300 space-y-2 list-disc list-inside">
-            <li>Click the <strong>Night Rider</strong> icon in the VS Code left activity bar.</li>
+            <li>Click the <strong>Night Rider</strong> icon in the VS Code left activity bar[cite: 1].</li>
             <li>
-              Inside the panel, navigate to the <strong>Groq API Key</strong> field (or click the gear / settings icon).
+              Inside the panel, locate the <strong>Groq API Key</strong> input box (or click the gear / settings icon)[cite: 1].
             </li>
             <li>
-              Paste your <code className="text-cyan-300">gsk_...</code> token directly into the input box and click <strong>Save</strong>.
+              Paste your <code className="text-cyan-300">gsk_...</code> token directly into the field and click <strong>Save</strong>[cite: 1].
             </li>
           </ul>
-        </div>
-
-        {/* Method 3: Shell Environment Variable */}
-        <div className="border border-slate-800 bg-slate-900/60 p-5 rounded-xl space-y-3">
-          <h3 className="text-base font-semibold text-slate-100 flex items-center gap-2">
-            <span className="text-emerald-400 font-mono text-xs px-2 py-0.5 rounded bg-emerald-950/60 border border-emerald-500/30">
-              METHOD 3
-            </span>
-            Terminal Environment Variable (Persistent)
-          </h3>
-          <pre className="bg-slate-950 p-3 rounded border border-cyan-500/20 text-cyan-300 text-xs overflow-x-auto">
-            <code>
-{`echo 'export GROQ_API_KEY="gsk_your_actual_key_here"' >> ~/.bashrc
-source ~/.bashrc`}
-            </code>
-          </pre>
         </div>
       </section>
 
