@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+:root {
+  --bg-primary: #0a0d14;
+  --bg-card: rgba(17, 24, 39, 0.7);
+  --border-glow: rgba(0, 229, 255, 0.2);
+  --cyan-neon: #00e5ff;
+  --purple-neon: #a855f7;
+  --text-primary: #f3f4f6;
+  --text-muted: #9ca3af;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  background-image: 
+    radial-gradient(ellipse at 50% 0%, rgba(0, 229, 255, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 80%, rgba(168, 85, 247, 0.08) 0%, transparent 50%);
+  background-attachment: fixed;
+}
+
+/* Header & Footer glass effect */
+header, footer {
+  backdrop-filter: blur(12px);
+  background-color: rgba(10, 13, 20, 0.8) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+header h1 {
+  background: linear-gradient(135deg, #00e5ff 0%, #38bdf8 50%, #c084fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.02em;
+}
+
+/* Typography & Headings */
+h1 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--cyan-neon);
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid rgba(0, 229, 255, 0.15);
+  padding-bottom: 0.5rem;
+}
+
+p {
+  color: var(--text-muted);
+  line-height: 1.75;
+  font-size: 1.05rem;
+}
+
+/* High-Contrast Neon Links */
+a {
+  color: var(--cyan-neon);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border-bottom: 1px dashed rgba(0, 229, 255, 0.4);
+}
+
+a:hover {
+  color: #ffffff;
+  border-bottom-style: solid;
+  text-shadow: 0 0 8px rgba(0, 229, 255, 0.6);
+}
+
+/* Numbered Steps & Unordered Lists */
+ol, ul {
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+li {
+  color: #e2e8f0;
+  line-height: 1.6;
+}
+
+li strong {
+  color: #ffffff;
+}
+
+/* Polished Dark Terminal Code Blocks */
+pre {
+  background: #0f172a !important;
+  border: 1px solid rgba(56, 189, 248, 0.25) !important;
+  border-radius: 0.6rem;
+  padding: 1rem 1.25rem;
+  margin-top: 0.6rem;
+  margin-bottom: 0.6rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), inset 0 0 10px rgba(0, 229, 255, 0.05);
+  overflow-x: auto;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+  font-size: 0.925rem;
+  color: #38bdf8;
+}
+
+/* Inline single codes */
+:not(pre) > code {
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  padding: 0.15rem 0.4rem;
+  border-radius: 0.35rem;
+  color: #7dd3fc;
+}
